@@ -1,0 +1,125 @@
+<div class="row m-3">
+    <div class="col-md-12">
+      <a routerLink="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to the Dashboard</a>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card text-dark bg-light">
+  
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i> Edition client</h4>
+          <form #formClient="ngForm" (ngSubmit)="editer()">
+            <div class="form-group">
+              <label for="">firstname</label>
+              <input
+                type="text"
+                name="firstname"
+                [(ngModel)]="client.firstname"
+                #clientfirstname=ngModel
+                required
+                minlength="3"
+                [ngClass]="{'is-invalid':clientfirstname.errors && clientfirstname.touched}"
+                class="form-control"
+                placeholder=""
+                aria-describedby="helpId"
+              >
+              <div [hidden]="!clientfirstname.errors?.required" class="invalid-feedback">
+                firstname is required
+              </div>
+              <div [hidden]="!clientfirstname.errors?.minlength" class="invalid-feedback">
+                  Must be at least 2 characters
+              </div>
+  
+            </div>
+  
+            <div class="form-group">
+              <label for="">lastname</label>
+              <input
+                type="text"
+                name="lastname"
+                [(ngModel)]="client.lastname"
+                #clientlastname=ngModel
+                required
+                minlength="3"
+                [ngClass]="{'is-invalid':clientlastname.errors && clientlastname.touched}"
+                class="form-control"
+                placeholder=""
+                aria-describedby="helpId"
+              >
+              <div [hidden]="!clientlastname.errors?.required" class="invalid-feedback">
+                lastname is required
+              </div>
+              <div [hidden]="!clientlastname.errors?.minlength" class="invalid-feedback">
+                Must be at least 2 characters
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="">email</label>
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="client.email"
+                #clientemail=ngModel
+                required
+                minlength="5"
+                [ngClass]="{'is-invalid':clientemail.errors && clientemail.touched}"
+                class="form-control"
+                placeholder=""
+                aria-describedby="helpId"
+              >
+              <div [hidden]="!clientemail.errors?.required" class="invalid-feedback">
+                email is required
+              </div>
+              <div [hidden]="!clientemail.errors?.minlength" class="invalid-feedback">
+                Must be at least 5 characters
+              </div>
+  
+            </div>
+  
+            <div class="form-group">
+              <label for="">phone</label>
+              <input
+                type="number"
+                name="phone"
+                [(ngModel)]="client.phone"
+                #clientphone=ngModel
+                required
+                [ngClass]="{'is-invalid':clientphone.errors && clientphone.touched}"
+                class="form-control"
+                placeholder=""
+                aria-describedby="helpId"
+              >
+              <div [hidden]="!clientphone.errors?.required" class="invalid-feedback">
+                phone is required
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="">balance</label>
+              <input
+                type="number"
+                name="balance"
+                [(ngModel)]="client.balance"
+                #clientbalance=ngModel
+                required
+                [ngClass]="{'is-invalid':clientbalance.errors && clientbalance.touched}"
+                class="form-control"
+                placeholder=""
+                aria-describedby="helpId"
+              >
+              <div [hidden]="!clientbalance.errors?.required" class="invalid-feedback">
+                balance is required
+              </div>
+            </div>
+            <button class="btn btn-warning btn-block" [disabled]="!formClient.valid" type="submit">Submit</button>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br>
+  

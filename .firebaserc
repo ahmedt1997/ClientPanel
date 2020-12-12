@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "clientpanel-f2956": {
+      "hosting": {
+        "ClientPanel": [
+          "clientpanel-f2956"
+        ]
+      }
+    }
+  }
+}
